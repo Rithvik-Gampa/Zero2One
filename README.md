@@ -1,2 +1,20 @@
 # Zero2One
-AI-powered Study Companion web app that turns notes into quizzes for effective learning. Built with React.js (frontend) and Node.js + Express (backend). Notes are sent via REST APIs, quizzes are generated and returned in JSON, ensuring smooth frontend–backend communication and a fast, user-friendly experience.
+# Study Companion AI
+
+AI-powered web application that explains concepts at multiple levels, generates examples, and creates interactive quizzes.
+
+## Tech Stack
+- Frontend: React.js
+- Backend: FastAPI (Python)
+- AI: LLaMA (via Ollama)
+- Storage: LocalStorage
+- Speech: Web Speech API
+
+## Features
+- Multi-level explanation (Beginner, Exam-Ready, Real-life)
+- Examples tab
+- Interactive Quiz with score & progress
+- Audio explanation
+- Login system with streak tracking
+- Dark/Light mode
+- Dashboard with history

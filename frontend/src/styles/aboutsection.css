@@ -1,0 +1,201 @@
+/* ================= ABOUT SECTION ================= */
+
+.about-section{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:60px;
+
+  align-items:center;
+
+  padding:120px 10%;
+}
+
+/* ================= LEFT ================= */
+
+.about-tag{
+
+  display:inline-block;
+
+  padding:12px 18px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  margin-bottom:24px;
+
+  color:#c4b5fd;
+
+  font-weight:600;
+}
+
+.about-left h2{
+
+  font-size:56px;
+
+  line-height:1.1;
+
+  margin-bottom:26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #c4b5fd,
+      #f9a8d4
+    );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+}
+
+.about-description{
+
+  color:#cbd5e1;
+
+  line-height:2;
+
+  font-size:18px;
+}
+
+/* ================= RIGHT ================= */
+
+.about-card{
+
+  padding:40px;
+
+  border-radius:34px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(16px);
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:24px;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.18);
+}
+
+/* ================= ITEMS ================= */
+
+.about-item{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  transition:0.3s ease;
+}
+
+.about-item:hover{
+
+  transform:
+    translateX(8px);
+
+  background:
+    rgba(255,255,255,0.08);
+}
+
+.about-item span{
+
+  font-size:30px;
+}
+
+.about-item p{
+
+  font-size:17px;
+
+  font-weight:600;
+
+  color:white;
+}
+
+/* ================= LIGHT MODE ================= */
+
+body.light .about-description{
+
+  color:#475569;
+}
+
+body.light .about-card{
+
+  background:
+    rgba(255,255,255,0.8);
+
+  border:
+    1px solid rgba(0,0,0,0.06);
+}
+
+body.light .about-item{
+
+  background:
+    rgba(0,0,0,0.03);
+}
+
+body.light .about-item p{
+
+  color:#111827;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .about-section{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .about-left h2{
+
+    font-size:42px;
+  }
+}
+
+/* ================= LIGHT MODE HEADING ================= */
+
+body.light .about-left h2{
+
+  background:none;
+
+  -webkit-text-fill-color:initial;
+
+  color:#7c3aed;
+}
+body.light .about-tag{
+
+  background:
+    rgba(124,58,237,0.08);
+
+  border:
+    1px solid rgba(124,58,237,0.12);
+
+  color:#7c3aed;
+}

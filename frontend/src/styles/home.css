@@ -1,0 +1,246 @@
+.home-page{
+
+  width:100%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:40px;
+}
+
+/* ================= HERO ================= */
+
+.home-hero{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:30px;
+
+  flex-wrap:wrap;
+
+  padding:38px;
+
+  border-radius:32px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139,92,246,0.18),
+      rgba(236,72,153,0.12)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.18);
+}
+
+.welcome-text{
+
+  color:#8b5cf6;
+
+  font-weight:600;
+
+  margin-bottom:10px;
+}
+
+.home-hero h1{
+
+  font-size:54px;
+
+  margin-bottom:16px;
+
+  line-height:1.15;
+
+  font-weight:800;
+
+  max-width:700px;
+}
+
+.hero-subtext{
+
+  color:#cbd5e1;
+
+  font-size:18px;
+
+  line-height:1.8;
+
+  max-width:620px;
+}
+
+/* ================= STREAK ================= */
+
+.streak-card{
+
+  min-width:320px;
+
+  padding:32px;
+
+  border-radius:28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #ec4899
+    );
+
+  color:white;
+
+  box-shadow:
+    0 18px 45px rgba(139,92,246,0.35);
+
+  transition:0.3s ease;
+}
+
+.streak-card:hover{
+
+  transform:translateY(-6px);
+}
+
+.streak-card h2{
+
+  margin-bottom:12px;
+
+  font-size:30px;
+}
+
+/* ================= SECTION ================= */
+
+.section-title{
+
+  font-size:28px;
+
+  margin-bottom:20px;
+}
+
+/* ================= GRID ================= */
+
+.quick-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+  gap:24px;
+}
+
+/* ================= CARD ================= */
+
+.quick-card{
+
+  padding:32px;
+
+  border-radius:28px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(14px);
+
+  transition:0.32s ease;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.12);
+}
+
+.quick-card:hover{
+
+  transform:
+    translateY(-8px)
+    scale(1.02);
+
+  background:
+    rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 18px 40px rgba(139,92,246,0.18);
+}
+
+.quick-card span{
+
+  font-size:42px;
+
+  display:block;
+
+  margin-bottom:18px;
+}
+
+.quick-card h3{
+
+  margin-bottom:10px;
+
+  font-size:24px;
+}
+
+.quick-card p{
+
+  color:#94a3b8;
+
+  line-height:1.7;
+}
+
+/* ================= RECENT ================= */
+
+.recent-card{
+
+  padding:32px;
+
+  border-radius:28px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* ================= LIGHT ================= */
+
+body.light .hero-subtext,
+body.light .quick-card p{
+
+  color:#475569;
+}
+
+body.light .quick-card,
+body.light .recent-card,
+body.light .home-hero{
+
+  background:
+    rgba(255,255,255,0.72);
+
+  backdrop-filter:blur(18px);
+
+  border:
+    1px solid rgba(0,0,0,0.06);
+}
+
+body.light .home-hero h1,
+body.light .section-title{
+
+  color:#111827;
+}

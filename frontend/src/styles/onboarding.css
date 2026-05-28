@@ -1,0 +1,287 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ================= PAGE ================= */
+
+.onboarding-page{
+
+  width:100%;
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:0.3s ease;
+}
+
+/* LIGHT MODE */
+
+body.light .onboarding-page{
+
+  background:#f8fafc;
+  color:#111827;
+}
+
+/* DARK MODE */
+
+body.dark .onboarding-page{
+
+  background:#0f172a;
+  color:white;
+}
+
+/* ================= GLOW ================= */
+
+.bg-glow{
+
+  position:absolute;
+
+  width:450px;
+  height:450px;
+
+  border-radius:50%;
+
+  filter:blur(140px);
+
+  opacity:0.35;
+}
+
+.glow1{
+
+  background:#8b5cf6;
+
+  top:-100px;
+  left:-100px;
+}
+
+.glow2{
+
+  background:#ec4899;
+
+  bottom:-120px;
+  right:-120px;
+}
+
+/* ================= CONTENT ================= */
+
+.onboarding-content{
+
+  width:100%;
+  max-width:850px;
+
+  padding:40px;
+
+  text-align:center;
+
+  position:relative;
+  z-index:10;
+}
+
+/* MINI TEXT */
+
+.mini-text{
+
+  color:#c084fc;
+
+  font-size:15px;
+
+  margin-bottom:18px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+/* TITLE */
+
+.onboarding-content h1{
+
+  font-size:72px;
+
+  line-height:1.1;
+
+  margin-bottom:20px;
+
+  transition:0.3s ease;
+}
+
+/* LIGHT MODE TITLE */
+
+body.light .onboarding-content h1{
+
+  color:#111827;
+}
+
+/* DARK MODE TITLE */
+
+body.dark .onboarding-content h1{
+
+  color:white;
+}
+
+/* SUBTITLE */
+
+.subtitle{
+
+  font-size:20px;
+
+  margin-bottom:50px;
+
+  transition:0.3s ease;
+}
+
+/* LIGHT MODE SUBTITLE */
+
+body.light .subtitle{
+
+  color:#475569;
+}
+
+/* DARK MODE SUBTITLE */
+
+body.dark .subtitle{
+
+  color:#cbd5e1;
+}
+
+/* ================= OPTIONS ================= */
+
+.options-wrap{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:18px;
+
+  margin-bottom:55px;
+}
+
+/* OPTION BUTTON */
+
+.option-pill{
+
+  padding:18px 30px;
+
+  border:none;
+
+  border-radius:999px;
+
+  font-size:16px;
+  font-weight:500;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+
+  backdrop-filter:blur(10px);
+}
+
+/* LIGHT MODE */
+
+body.light .option-pill{
+
+  background:#e2e8f0;
+  color:#111827;
+}
+
+/* DARK MODE */
+
+body.dark .option-pill{
+
+  background:rgba(255,255,255,0.06);
+  color:white;
+}
+
+/* HOVER */
+
+.option-pill:hover{
+
+  transform:translateY(-4px);
+}
+
+/* LIGHT MODE HOVER */
+
+body.light .option-pill:hover{
+
+  background:#cbd5e1;
+}
+
+/* DARK MODE HOVER */
+
+body.dark .option-pill:hover{
+
+  background:rgba(255,255,255,0.12);
+}
+
+/* ACTIVE */
+
+.option-pill.active{
+
+  background:linear-gradient(
+    135deg,
+    #8b5cf6,
+    #ec4899
+  );
+
+  color:white;
+
+  box-shadow:
+    0 10px 30px rgba(236,72,153,0.35);
+}
+
+/* ================= BUTTON ================= */
+
+.continue-btn{
+
+  padding:18px 42px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+    135deg,
+    #8b5cf6,
+    #ec4899
+  );
+
+  color:white;
+
+  font-size:17px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.continue-btn:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 15px 40px rgba(236,72,153,0.3);
+}
+
+/* ================= TOGGLE ================= */
+
+.onboarding-toggle{
+
+  position:absolute;
+
+  top:30px;
+  right:30px;
+
+  z-index:20;
+}

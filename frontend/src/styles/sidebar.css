@@ -1,0 +1,286 @@
+.sidebar{
+
+  width:260px;
+
+  min-height:100vh;
+
+  padding:26px 18px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  transition:0.35s ease;
+
+  background:
+    rgba(15,23,42,0.72);
+
+  backdrop-filter:blur(18px);
+
+  border-right:
+    1px solid rgba(255,255,255,0.06);
+
+  box-shadow:
+    0 0 40px rgba(0,0,0,0.18);
+}
+
+/* ================= CLOSED ================= */
+
+.sidebar.closed{
+
+  width:92px;
+}
+
+/* ================= MENU BUTTON ================= */
+
+.menu-btn{
+
+  width:48px;
+
+  height:48px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:18px;
+
+  margin-bottom:28px;
+
+  transition:0.3s ease;
+
+  backdrop-filter:blur(10px);
+}
+
+.menu-btn:hover{
+
+  transform:rotate(90deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #ec4899
+    );
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+
+  font-size:26px;
+
+  margin-bottom:35px;
+}
+
+/* ================= MENU ================= */
+
+.sidebar-menu{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+}
+
+/* ================= ITEM ================= */
+
+.sidebar-item{
+
+  width:100%;
+
+  border:none;
+
+  background:transparent;
+
+  color:#cbd5e1;
+
+  padding:16px 18px;
+
+  border-radius:18px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  cursor:pointer;
+
+  transition:0.28s ease;
+
+  font-size:15px;
+
+  font-weight:600;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.sidebar-item:hover{
+
+  background:
+    rgba(255,255,255,0.08);
+
+  transform:translateX(6px);
+
+  color:white;
+}
+
+/* ================= ACTIVE ================= */
+
+.sidebar-item.active{
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #ec4899
+    );
+
+  color:white;
+
+  box-shadow:
+    0 12px 30px rgba(139,92,246,0.35);
+}
+
+/* ================= CLOSED ================= */
+
+.sidebar.closed .sidebar-item{
+
+  justify-content:center;
+}
+
+/* ================= BOTTOM ================= */
+
+.sidebar-bottom{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.logout{
+
+  color:#f87171;
+}
+
+/* ================= LIGHT SIDEBAR ================= */
+
+body.light .sidebar{
+
+  background:
+    rgba(255,255,255,0.75);
+
+  backdrop-filter:blur(18px);
+
+  border-right:
+    1px solid rgba(0,0,0,0.06);
+
+  box-shadow:
+    0 0 40px rgba(0,0,0,0.06);
+}
+
+/* ================= LOGO ================= */
+
+body.light .logo{
+
+  color:#111827;
+}
+
+/* ================= MENU BUTTON ================= */
+
+body.light .menu-btn{
+
+  background:
+    rgba(0,0,0,0.05);
+
+  color:#111827;
+}
+
+/* ================= SIDEBAR ITEMS ================= */
+
+body.light .sidebar-item{
+
+  color:#374151;
+}
+
+body.light .sidebar-item:hover{
+
+  background:
+    rgba(0,0,0,0.05);
+}
+
+/* ================= ACTIVE ITEM ================= */
+
+body.light .sidebar-item.active{
+
+  color:white;
+}
+
+/* ================= LOGOUT ================= */
+
+body.light .logout{
+
+  color:#ef4444;
+}
+
+/* ================= THEME TOGGLE ================= */
+
+.sidebar-theme{
+
+  margin-bottom:16px;
+}
+
+.theme-toggle-sidebar{
+
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:15px;
+
+  font-weight:600;
+
+  transition:0.3s ease;
+}
+
+.theme-toggle-sidebar:hover{
+
+  background:
+    rgba(255,255,255,0.12);
+}
+
+/* ================= LIGHT ================= */
+
+body.light .theme-toggle-sidebar{
+
+  background:
+    rgba(0,0,0,0.05);
+
+  color:#111827;
+}

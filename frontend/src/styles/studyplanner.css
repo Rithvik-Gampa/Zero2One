@@ -1,0 +1,396 @@
+.planner-page{
+
+  width:100%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:30px;
+}
+
+/* ================= HEADER ================= */
+
+.planner-header h1{
+
+  font-size:42px;
+
+  margin-bottom:10px;
+}
+
+.planner-header p{
+
+  color:#94a3b8;
+
+  font-size:17px;
+}
+
+/* ================= LAYOUT ================= */
+
+.planner-layout{
+
+  display:grid;
+
+  grid-template-columns:
+    420px 1fr;
+
+  gap:25px;
+}
+
+/* ================= FORM ================= */
+
+.planner-form{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+  padding:32px;
+
+  border-radius:32px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.16);
+}
+
+/* ================= INPUT ================= */
+
+.planner-form input{
+
+  width:100%;
+
+  padding:20px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color:white;
+
+  outline:none;
+
+  font-size:15px;
+
+  transition:0.3s ease;
+
+  backdrop-filter:blur(10px);
+}
+
+.planner-form input:focus{
+
+  border:
+    1px solid rgba(139,92,246,0.45);
+
+  box-shadow:
+    0 0 22px rgba(139,92,246,0.18);
+}
+
+/* ================= BUTTON ================= */
+
+.generate-plan-btn{
+
+  padding:20px;
+
+  border:none;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #ec4899
+    );
+
+  color:white;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+
+  box-shadow:
+    0 14px 35px rgba(139,92,246,0.28);
+}
+
+.generate-plan-btn:hover{
+
+  transform:
+    translateY(-4px)
+    scale(1.02);
+
+  box-shadow:
+    0 18px 45px rgba(139,92,246,0.4);
+}
+
+/* ================= OUTPUT ================= */
+
+.planner-output{
+
+  padding:32px;
+
+  border-radius:32px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.16);
+}
+
+/* ================= EMPTY ================= */
+
+.empty-plan{
+
+  text-align:center;
+
+  margin-top:100px;
+}
+
+/* ================= PLAN ================= */
+
+.plan-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+}
+
+.plan-card{
+
+  padding:28px;
+
+  border-radius:26px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  transition:0.3s ease;
+
+  backdrop-filter:blur(12px);
+
+  position:relative;
+
+  overflow:hidden;
+}
+.plan-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  top:0;
+
+  width:6px;
+
+  height:100%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #8b5cf6,
+      #ec4899
+    );
+}
+.plan-card:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 14px 35px rgba(139,92,246,0.16);
+}
+
+/* ================= TOP ================= */
+
+.plan-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:12px;
+}
+
+/* ================= PRIORITY ================= */
+
+.priority{
+
+  padding:8px 16px;
+
+  border-radius:999px;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  backdrop-filter:blur(10px);
+}
+
+.priority.High{
+
+  background:
+    rgba(239,68,68,0.16);
+
+  color:#f87171;
+
+  border:
+    1px solid rgba(239,68,68,0.28);
+}
+
+.priority.Medium{
+
+  background:
+    rgba(251,191,36,0.16);
+
+  color:#fbbf24;
+
+  border:
+    1px solid rgba(251,191,36,0.28);
+}
+
+.priority.Low{
+
+  background:
+    rgba(16,185,129,0.16);
+
+  color:#34d399;
+
+  border:
+    1px solid rgba(16,185,129,0.28);
+}
+
+/* ================= LIGHT ================= */
+
+body.light .planner-header h1,
+body.light .plan-card h3{
+
+  color:#111827;
+}
+
+body.light .planner-header p{
+
+  color:#475569;
+}
+
+body.light .planner-form,
+body.light .planner-output,
+body.light .plan-card,
+body.light .planner-form input{
+
+  background:
+    rgba(255,255,255,0.78);
+
+  backdrop-filter:blur(18px);
+
+  border:
+    1px solid rgba(0,0,0,0.06);
+
+  color:#111827;
+}
+
+body.light .planner-form input{
+
+  background:
+    rgba(255,255,255,0.9);
+
+  color:#111827;
+
+  border:
+    1px solid rgba(0,0,0,0.06);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+  .planner-layout{
+
+    grid-template-columns:1fr;
+  }
+}
+
+/* ================= LOADER ================= */
+
+.loader-content{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:12px;
+}
+
+.loader-spinner{
+
+  width:22px;
+
+  height:22px;
+
+  border-radius:50%;
+
+  border:
+    3px solid rgba(255,255,255,0.3);
+
+  border-top:
+    3px solid white;
+
+  animation:
+    spin 0.8s linear infinite;
+}
+
+.generate-plan-btn.loading{
+
+  opacity:0.92;
+
+  cursor:not-allowed;
+}
+
+/* ================= SPIN ================= */
+
+@keyframes spin{
+
+  from{
+
+    transform:rotate(0deg);
+  }
+
+  to{
+
+    transform:rotate(360deg);
+  }
+}

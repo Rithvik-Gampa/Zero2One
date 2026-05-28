@@ -1,122 +1,117 @@
-.login-container {
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+.login-bg {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: url("/school.jpg") center/cover no-repeat;
+  position: relative;
 }
 
-.login-card {
-  background: white;
-  padding: 50px 45px;   /* more breathing space */
-  border-radius: 20px;
-  width: 420px;         /* increased width */
-  max-width: 90%;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+.login-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.chalkboard {
+  width: 450px;
+  padding: 60px 40px;
+  border-radius: 15px;
+  border: 14px solid #c28c3c;
+  background: linear-gradient(145deg, #0f3d1c, #082712);
   text-align: center;
-  animation: fadeIn 0.4s ease;
-}
-.login-card h2 {
-  margin-bottom: 20px;
-  font-size: 26px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
 }
 
-.login-card input {
+.chalk-title {
+  font-family: "Caveat", cursive;
+  font-size: 60px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* FLOATING INPUTS */
+.floating-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.floating-group input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  padding: 12px 15px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
   font-size: 14px;
 }
 
-.login-card button {
+.floating-group label {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  color: #666;
+  font-size: 14px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.floating-group input:focus + label,
+.floating-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  background: white;
+  padding: 0 6px;
+  font-size: 12px;
+}
+
+/* PASSWORD ICON */
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  cursor: pointer;
+}
+
+/* BUTTON */
+.login-btn {
   width: 100%;
-  padding: 10px;
+  padding: 14px;
+  background: #e74c3c;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 30px;
   color: white;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.login-card button:hover {
-  transform: translateY(-2px);
+.login-btn:hover {
+  transform: scale(1.05);
 }
 
-.register-text {
-  margin-top: 12px;
-  font-size: 13px;
-  color: #666;
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Header Styling */
-.login-header {
-  margin-bottom: 20px;
-}
-
-.login-logo {
-  width: 70px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.app-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Password Toggle */
-.password-wrapper {
-  position: relative;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.password-wrapper input {
-  width: 100%;
-  padding: 14px 40px 14px 14px; /* space for icon */
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 15px;
-}
-
-.toggle-password {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 16px;
-  user-select: none;
-}
-
-
-/* Loading Spinner */
+/* LOADING SPINNER */
 .spinner {
-  width: 18px;
-  height: 18px;
-  border: 3px solid rgba(255, 255, 255, 0.4);
-  border-top: 3px solid white;
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
   border-radius: 50%;
-  animation: spin 0.7s linear infinite;
+  animation: spin 1s linear infinite;
   margin: auto;
 }
 
@@ -124,31 +119,82 @@
   to { transform: rotate(360deg); }
 }
 
-/* Shake Animation */
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-8px); }
-  50% { transform: translateX(8px); }
-  75% { transform: translateX(-8px); }
-  100% { transform: translateX(0); }
-}
-
+/* SHAKE */
 .shake {
-  animation: shake 0.4s ease;
+  animation: shake 0.4s;
 }
 
-/* Success Animation */
-.success {
-  animation: successFade 0.8s ease forwards;
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
 }
 
-@keyframes successFade {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.1);
-    opacity: 0;
-  }
+/* SLIDE EFFECT */
+.slide-login {
+  animation: slideIn 0.5s ease;
+}
+
+.slide-register {
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ERROR */
+.error-text {
+  color: #ff7675;
+  margin-bottom: 10px;
+}
+
+/* TOGGLE */
+.toggle-auth {
+  margin-top: 20px;
+  color: white;
+  cursor: pointer;
+}
+.toggle-auth:hover {
+  text-decoration: underline;
+}
+
+#tsparticles {
+  position: absolute !important;
+  inset: 0;
+  z-index: 0;
+}
+
+.chalkboard {
+  position: relative;
+  z-index: 2;
+}
+
+
+.login-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+#tsparticles {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.chalkboard {
+  position: relative;
+  z-index: 2;
+}
+
+.login-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
 }

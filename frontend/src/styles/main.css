@@ -1,0 +1,206 @@
+*{
+
+  margin:0;
+
+  padding:0;
+
+  box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+
+  width:100%;
+
+  min-height:100vh;
+}
+
+body{
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #020617,
+      #0f172a,
+      #111827
+    );
+
+  color:white;
+
+  letter-spacing:0.2px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ================= THEME ================= */
+
+body.light{
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fafc,
+      #eef2ff,
+      #ffffff
+    );
+
+  color:#111827;
+}
+
+/* ================= APP ================= */
+
+.app-layout{
+
+  display:flex;
+
+  min-height:100vh;
+}
+
+/* ================= MAIN ================= */
+
+.main-content{
+
+  flex:1;
+
+  padding:34px;
+
+  overflow-x:hidden;
+
+  animation:
+    fadeIn 0.4s ease;
+}
+
+/* ================= GLOBAL ANIMATION ================= */
+
+@keyframes fadeIn{
+
+  from{
+
+    opacity:0;
+
+    transform:translateY(10px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+  }
+}
+
+/* ================= GLOBAL PAGE HEADINGS ================= */
+
+.page-title{
+
+  font-size:52px;
+
+  font-weight:800;
+
+  line-height:1.1;
+
+  margin-bottom:14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #c4b5fd,
+      #f9a8d4
+    );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  letter-spacing:-1px;
+}
+
+/* ================= SUBTITLE ================= */
+
+.page-subtitle{
+
+  font-size:18px;
+
+  color:#cbd5e1;
+
+  line-height:1.8;
+
+  max-width:720px;
+}
+
+/* ================= SECTION TITLE ================= */
+
+.section-heading{
+
+  font-size:30px;
+
+  font-weight:700;
+
+  margin-bottom:24px;
+
+  position:relative;
+
+  display:inline-block;
+}
+
+.section-heading::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  bottom:-8px;
+
+  width:70%;
+
+  height:4px;
+
+  border-radius:999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8b5cf6,
+      #ec4899
+    );
+}
+
+/* ================= LIGHT MODE ================= */
+
+body.light .page-title{
+
+  background:
+    linear-gradient(
+      135deg,
+      #111827,
+      #7c3aed,
+      #ec4899
+    );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+}
+
+body.light .page-subtitle{
+
+  color:#475569;
+}
+
+html{
+
+  scroll-behavior:smooth;
+}

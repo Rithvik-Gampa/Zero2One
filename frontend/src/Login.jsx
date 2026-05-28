@@ -1,119 +1,82 @@
 import { useState } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 import "./Login.css";
 
 function Login({ onLogin }) {
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isRegistering, setIsRegistering] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [shake, setShake] = useState(false);
-  const [success, setSuccess] = useState(false);
 
-  const handleSubmit = () => {
-    if (!username.trim() || !password.trim()) {
-      triggerShake();
-      return;
-    }
-
-    setLoading(true);
-
-    setTimeout(() => {
-      const users = JSON.parse(localStorage.getItem("users")) || {};
-
-      // REGISTER
-      if (isRegistering) {
-        if (users[username]) {
-          setLoading(false);
-          triggerShake();
-          return;
-        }
-
-        users[username] = {
-          password,
-          streak: 1,
-          lastLogin: new Date().toISOString().split("T")[0],
-        };
-
-        localStorage.setItem("users", JSON.stringify(users));
-        setLoading(false);
-        setIsRegistering(false);
-        return;
-      }
-
-      // LOGIN
-      const user = users[username];
-
-      if (!user || user.password !== password) {
-        setLoading(false);
-        triggerShake();
-        return;
-      }
-
-      // SUCCESS ANIMATION
-      setSuccess(true);
-
-      setTimeout(() => {
-        onLogin(username);
-      }, 900);
-
-    }, 1200);
+  const particlesInit = async (main) => {
+    await loadFull(main);
   };
 
-  const triggerShake = () => {
-    setShake(true);
-    setTimeout(() => setShake(false), 500);
+  const handleLogin = () => {
+    if (!username || !password) return alert("Fill all fields");
+    onLogin(username);
   };
 
   return (
-    <div className="login-container">
-      <div className={`login-card ${shake ? "shake" : ""} ${success ? "success" : ""}`}>
+    <div className="login-bg">
 
-        <div className="login-header">
-          <img src="/logo.png" alt="Logo" className="login-logo" />
-          <h1 className="app-title">STUDY COMPANION AI</h1>
-          <h2>{isRegistering ? "Register" : "Login"}</h2>
+    <Particles
+  id="tsparticles"
+  init={particlesInit}
+  options={{
+    fullScreen: { enable: false },   // IMPORTANT
+    background: { color: "transparent" },
+    particles: {
+      number: { value: 80 },
+      color: { value: "#ffffff" },
+      size: { value: 3 },
+      move: {
+        enable: true,
+        speed: 1.5
+      },
+      opacity: { value: 0.6 },
+      links: {
+        enable: true,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.3,
+        width: 1
+      }
+    }
+  }}
+/>
+
+      {/* LOGIN CARD */}
+      <div className="chalkboard">
+
+        <h1 className="chalk-title">Login</h1>
+
+        <div className="floating-group">
+          <input
+            type="text"
+            required
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label>Username</label>
         </div>
 
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-
-        <div className="password-wrapper">
+        <div className="floating-group">
           <input
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
+            type="password"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <span
-            className="toggle-password"
-            onClick={() => setShowPassword(!showPassword)}
-          >
-            {showPassword ? "🙈" : "👁"}
-          </span>
+          <label>Password</label>
         </div>
 
-        <button onClick={handleSubmit} disabled={loading}>
-          {loading ? <div className="spinner"></div> : isRegistering ? "Register" : "Login"}
+        <button className="login-btn" onClick={handleLogin}>
+          Enter
         </button>
 
-        <p
-          className="toggle-auth"
-          onClick={() => {
-            setIsRegistering(!isRegistering);
-            setPassword("");
-          }}
-        >
-          {isRegistering
-            ? "Already have an account? Login"
-            : "Don't have an account? Register"}
-        </p>
-
       </div>
+
     </div>
   );
 }

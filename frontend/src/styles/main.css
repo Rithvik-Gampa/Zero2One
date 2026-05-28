@@ -204,3 +204,115 @@ html{
 
   scroll-behavior:smooth;
 }
+
+@media (max-width: 768px){
+
+  *{
+    box-sizing: border-box;
+  }
+
+  body{
+    overflow-x: hidden;
+  }
+
+  .app-layout{
+    flex-direction: column;
+  }
+
+  .main-content{
+    width: 100%;
+    padding: 1rem;
+  }
+
+  /* ===== SIDEBAR ===== */
+
+  .sidebar{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+  }
+
+  /* ===== HERO / LANDING ===== */
+
+  .hero-section{
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .hero-left,
+  .hero-right{
+    width: 100%;
+  }
+
+  .hero-left h1{
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .hero-left p{
+    font-size: 1rem;
+  }
+
+  .hero-right{
+    display: none;
+  }
+
+  /* ===== NAVBAR ===== */
+
+  .navbar{
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-links{
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .logo{
+    font-size: 1.5rem;
+  }
+
+  /* ===== BUTTONS ===== */
+
+  .hero-buttons{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons button,
+  .primary-btn,
+  .secondary-btn{
+    width: 100%;
+  }
+
+  /* ===== CARDS ===== */
+
+  .card,
+  .feature-card,
+  .planner-card,
+  .quiz-card{
+    width: 100%;
+  }
+
+  /* ===== INPUTS ===== */
+
+  input,
+  textarea{
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* ===== TITLES ===== */
+
+  .page-title{
+    font-size: 2rem;
+  }
+
+  .page-subtitle{
+    font-size: 1rem;
+  }
+}

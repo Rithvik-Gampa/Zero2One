@@ -216,7 +216,7 @@ html{
   }
 
   .app-layout{
-    flex-direction: column;
+    
   }
 
   .main-content{
@@ -227,11 +227,20 @@ html{
   /* ===== SIDEBAR ===== */
 
   .sidebar{
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding: 1rem;
-  }
+  width: 70px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 1rem 0.5rem;
+  z-index: 1000;
+}
+
+.main-content{
+  margin-left: 70px;
+  width: calc(100% - 70px);
+  padding: 1rem;
+}
 
   /* ===== HERO / LANDING ===== */
 

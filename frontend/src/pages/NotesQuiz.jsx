@@ -63,12 +63,12 @@ setSelectedAnswers({});
               "application/json"
             },
 
-            body:JSON.stringify({
+            body: JSON.stringify({
 
-              notes,
+  concept: notes,
 
-              level
-            })
+  level: "Beginner"
+})
           }
         );
 

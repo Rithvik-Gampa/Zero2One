@@ -52,7 +52,7 @@ setSelectedAnswers({});
 
         const res = await fetch(
 
-          "http://localhost:8000/generate-notes-quiz",
+          `${import.meta.env.VITE_API_URL}/generate`,
 
           {
 

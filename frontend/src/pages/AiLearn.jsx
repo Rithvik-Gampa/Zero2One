@@ -39,25 +39,25 @@ const [quizFinished, setQuizFinished] =
 
         const res = await fetch(
 
-          "http://localhost:8000/generate",
+`${import.meta.env.VITE_API_URL}/generate`,
 
-          {
+{
 
-            method:"POST",
+  method:"POST",
 
-            headers:{
-              "Content-Type":
-              "application/json"
-            },
+  headers:{
+    "Content-Type":
+    "application/json"
+  },
 
-            body:JSON.stringify({
+  body:JSON.stringify({
 
-              concept,
+    concept,
 
-              level
-            })
-          }
-        );
+    level
+  })
+}
+);
 
         const data =
           await res.json();

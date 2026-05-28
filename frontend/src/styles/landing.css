@@ -632,3 +632,48 @@ body.light .timeline-content h3{
 body.light .timeline-content p{
   color:#4b5563;
 }
+
+@media (max-width: 768px) {
+
+  .navbar{
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-links{
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-section{
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .hero-left h1{
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .hero-left p{
+    font-size: 1rem;
+  }
+
+  .hero-buttons{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons button{
+    width: 100%;
+  }
+
+  .hero-right{
+    display: none;
+  }
+
+  .logo{
+    font-size: 1.8rem;
+  }
+}
